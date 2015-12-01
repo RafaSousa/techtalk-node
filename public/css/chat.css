@@ -1,0 +1,120 @@
+html                    { overflow-y:scroll; }
+body                    { padding-top:20px; }
+        .window {
+            border: 1px solid rgb(195, 195, 195);
+            width: 60%;
+            border-radius: 4px;
+            -webkit-box-shadow: 0px 2px 3px 0px rgba(50, 50, 50, 0.11);
+            -moz-box-shadow: 0px 2px 3px 0px rgba(50, 50, 50, 0.11);
+            box-shadow: 0px 2px 3px 0px rgba(50, 50, 50, 0.11);
+            text-align: left;
+            vertical-align: top;
+            margin: 0 20px;
+            animation: zoom 500ms;
+            -webkit-animation: zoom 500ms;
+            }
+            
+            .window {
+                height: 600px;
+                display: inline-block;
+            }
+            
+            .window .header {
+            padding: 0 9px;
+            line-height: 30px;
+            vertical-align: top;
+            padding: 2px 9px 0;
+            }
+            
+            .window .header .title {
+                font: 11px "Myriad Pro", "Arial";
+            }
+
+            .window .bullet {
+            height: 11px;
+            width: 11px;
+            display: inline-block;
+            background: #ccc;
+            border-radius: 100%;
+            vertical-align: middle;
+            margin-right: 5px;
+            }
+            
+            .window .bullet-red {
+            background: #DF7065;
+            }
+            
+            .window .bullet-yellow {
+            background: #E6BB46;
+            }
+            
+            .window .bullet-green {
+            background: #5BCC8B;
+            }
+            
+            .browser .header {
+            background: #E8E8E8;
+            border-radius: 4px 4px 0 0;
+            padding-bottom: 3px;
+            }
+            
+            .browser .header .title {
+            background: #fff;
+            display: inline-block;
+            width: 320px;
+            border-radius: 4px;
+            padding: 6px 14px 4px;
+            margin-left: 10px;
+            vertical-align: middle;
+            }
+            
+            .browser .header .title .scheme {
+            color: #7ED321;
+            }
+            
+            .browser .body {
+            padding: 16px;
+            font: 11px "Lucida Grande", "Open Sans";
+            }
+            
+            .browser .tweets {
+            margin: 0;
+            height: 430px;
+            overflow-y: auto;
+            }
+            
+            .browser .tweets li {
+            height: 27px;
+            line-height: 27px;
+            width: 80%;
+            vertical-align: middle;
+            color: #4B434D;
+            list-style-type: none;
+            margin-bottom: 14px;
+            }
+            
+            .browser .tweets img {
+            width: 27px;
+            height: 27px;
+            border-radius: 100%;
+            float: left;
+            margin-right: 10px;
+            }
+            
+            .browser .tweets .tweet {
+            max-width: 300px;
+            overflow: hidden;
+            display: inline-block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            }
+            
+            .browser .tweets .time {
+            color: #9B9B9B;
+            float: right;
+            }
+            
+            .browser .tweets .new {
+            animation: drop 500ms;
+            -webkit-animation: drop 500ms;
+            }

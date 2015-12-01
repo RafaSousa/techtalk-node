@@ -3,7 +3,8 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-var techs = [{ id: 123, name: 'Rafa Sousa' }];
+var techs = [];
+
 var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
@@ -13,12 +14,12 @@ app.get('/api/tech', function (req, res) {
     res.json(techs);
 });
 
-app.get('/', function (req, res) {
-    res.sendfile('./public/index.html');
-});
-
 app.get('/chat', function (req, res) {
     res.sendfile('./public/chat.html');
+});
+
+app.get('/', function (req, res) {
+    res.sendfile('./public/index.html');
 });
 
 // app.listen(port);
@@ -26,22 +27,64 @@ var io = require('socket.io').listen(app.listen(port));
 
 io.sockets.on('connection', function (socket) {
 
-    console.log('Client connected...');
+    socket.on('setConnection', function (data, callback) {
 
-    socket.on('join', function(data) {
-        console.log(data);
+        techs.push({ id: socket.id, name: data.name });
+
+        socket.emit('sendQtyOnline', getTach(socket));
+        socket.broadcast.emit('sendQtyOnline', getTach(socket));
+
+        callback(data);
         
-        socket.emit('messages', 'Hello from server');
+        console.log('setConnection', data);
+    });
+
+    socket.on('sendMessage', function (data) {
+
+        var tach = getTach(socket);
+
+        var message = {
+            name: tach.name,
+            text: data.text,
+            time: new Date()
+        };
+        
+        socket.emit('sendBroadcast', message);
+        socket.broadcast.emit('sendBroadcast', message);
+
+        console.log('sendMessage', message);
     });
     
-    socket.on('messages', function (data) {
+    socket.on('disconnect', function () {
+
+        socket.broadcast.emit('sendQtyOnline', getTach(socket));
         
-        //socket.emit('broad', data);
+        for (var i = 0; i < techs.length; ++i) {
+            if (techs[i].id == socket.id) {
+                techs.splice(i, 1);
+                return;
+            }
+        }
         
-        socket.broadcast.emit('broad', data);
-        
-        console.log(data);
+        console.log('disconnect', socket.id);
     });
 });
+
+function getTach(socket) {
+    
+    var tach = { name: '' };
+    
+    if (techs && socket) {
+        for (var i = 0; i < techs.length; ++i) {
+            if (techs[i].id == socket.id) {
+                tach = techs[i];
+            }
+        }
+    }
+    
+    tach.qtyOnline = techs.length;
+    
+    return tach;
+};
 
 console.log('server up =)');
