@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div>
+    <div class="jumbotron">
+      <h2><i class="ion-social-reddit-outline"></i> #Rakuten Techtalk 
+        <span class="label label-primary" ng-if="users.length > 0">{{ users.length }}</span>
+      </h2>
+    </div>
+  </div>
+
+  <div class="row margin-bottom-20 ">
+      <div class="col-sm-6 col-sm-offset-3 text-center panel">
+        <div class="panel-body">
+            <form class="form-group text-center">
+                  <div class="col-sm-offset-2 col-xs-6">
+                      <input type="text" class="form-control" 
+                        placeholder="Add tech here" ng-model="formData.name">
+                  </div>
+                  <div class="col-xs-2">
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createUser()">Add</button>
+                  </div>
+            </form>
+          </div>
+      </div>
+  </div>
+  
+  <div class="row" ng-if="users.length > 0">
+    <div class="col-sm-8 col-sm-offset-2">
+      <ul class="list-group">
+        <li ng-repeat="user in users" class="list-group-item">
+          {{ user.id }} - {{ user.name }} 
+          <button ng-click="deleteUser(user.id)" class="btn pull-right btn-sm btn-danger"> Excluir </button> 
+        </li>
+      </ul>
+      </div>
+  </div>
+  
+</div>

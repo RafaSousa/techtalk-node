@@ -1,0 +1,63 @@
+<div class="container">
+  
+    <div ng-if="!isAuthenticated()" class="center-form panel">
+        <div class="panel-body">
+            <h4 class="text-center"><i class="ion-person-add"></i>  #Tachtalk - Entrar</h4>
+            <form ng-submit="login()" name="loginForm">
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : loginForm.nickname.$invalid && loginForm.nickname.$dirty }">
+                <input class="form-control input-lg" name="nickname" ng-model="formData.nickname" placeholder="Nickname" autocomplete="off" required autofocus>
+                <span class="ion-at form-control-feedback"></span>
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-block btn-primary" ng-disabled="loginForm.$invalid">Entrar</button>
+                <br/>
+            </form>
+        </div>
+    </div>
+  
+    <div ng-if="isAuthenticated()" class="row">
+        <div class="conversation-wrap col-lg-3 hidden-xs">
+
+            <div class="media conversation" ng-repeat="user in users">
+                <a class="pull-left" href="javascript:;">
+                    <img class="media-object" style="width: 50px; height: 50px;" src="images/avatar.png">
+                </a>
+                <div class="media-body">
+                    <h5 class="media-heading">{{ user.name }}</h5>
+                    <small>{{ user.lastMessage }}</small>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="message-wrap col-lg-8">
+            <div class="msg-wrap">
+
+                <div class="alert alert-info msg-date">
+                    <strong>Today</strong>
+                </div>
+
+                <div class="media msg" ng-repeat="message in messages">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" style="width: 32px; height: 32px;" src="images/avatar.png">
+                    </a>
+                    <div class="media-body">
+                        <small class="pull-right time"><i class="fa fa-clock-o"></i>{{ message.time | date:"h:mma" }}</small>
+
+                        <h5 class="media-heading">{{ message.user }}</h5>
+                        <small class="col-lg-10">
+                            {{ message.text }}
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div class="send-wrap input-group">
+                <textarea class="form-control custom-control msg-field" ng-scroll-bottom-text="msg-wrap" ng-enter="sendMessage()" ng-model="formData.message" 
+                        rows="3" placeholder="Escreva uma mensagem..." style="resize:none"></textarea>
+                <span class="input-group-addon btn btn-primary" ng-click="sendMessage()" ng-scroll-bottom="msg-wrap"> Enviar </span>
+            </div>
+        </div>
+    </div>
+    
+</div>

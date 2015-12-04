@@ -1,13 +1,12 @@
 {
-  "name": "Demo1",
+  "name": "techtal-web",
   "version": "1.0.0",
-  "description": "My first demo project",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Techtalk - Node.js demo project",
   "author": "Rafael Sousa",
   "license": "MIT",
+  "scripts": {
+    "start": "node server/server.js"
+  },
   "dependencies": {
     "body-parser": "~1.0.1",
     "express": "~4.0.0",
