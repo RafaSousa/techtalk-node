@@ -1,5 +1,3 @@
-![](https://techtalk-node.azurewebsites.net/techtalk.png)
-
 # Techtalk Node Demo
 
 Build Techtalk demo project with AngularJS, Node.js and Socket.io
@@ -27,3 +25,5 @@ Build Techtalk demo project with AngularJS, Node.js and Socket.io
 ## About
 
 Rafael Sousa - http://www.rafaelsousa.com.br
+
+![](https://techtalk-node.azurewebsites.net/techtalk.png)
