@@ -1,7 +1,7 @@
 angular.module('Techtalk')
   .factory('socket', function ($rootScope, config) {
     if (typeof (io) != "undefined") {
-      var socket = io.connect(config.Urls.URLService);
+      var socket = io.connect(config.Urls.URLService, { reconnection: false });
       return {
         on: function (eventName, callback) {
           socket.on(eventName, function () {
@@ -45,7 +45,7 @@ angular.module('Techtalk')
           });
 
           var $id = $("." + attrs.ngScrollBottomText);
-          $id.scrollTop($id[0].scrollHeight);
+          $id.scrollTop($id[0].scrollHeight + 250);
           event.preventDefault();
         }
       });
@@ -56,7 +56,7 @@ angular.module('Techtalk')
       link: function (scope, element, attr) {
         var $id = $("." + attr.ngScrollBottom);
         $(element).on("click", function () {
-          $id.scrollTop($id[0].scrollHeight);
+          $id.scrollTop($id[0].scrollHeight + 250);
           $('.msg-field').focus();
         });
       }

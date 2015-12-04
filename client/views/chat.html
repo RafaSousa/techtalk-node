@@ -2,7 +2,7 @@
   
     <div ng-if="!isAuthenticated()" class="center-form panel">
         <div class="panel-body">
-            <h4 class="text-center"><i class="ion-person-add"></i>  #Tachtalk - Entrar</h4>
+            <h4 class="text-center"><i class="ion-social-reddit"></i>  #Tachtalk - Entrar</h4>
             <form ng-submit="login()" name="loginForm">
                 <div class="form-group has-feedback" ng-class="{ 'has-error' : loginForm.nickname.$invalid && loginForm.nickname.$dirty }">
                 <input class="form-control input-lg" name="nickname" ng-model="formData.nickname" placeholder="Nickname" autocomplete="off" required autofocus>
