@@ -2,15 +2,15 @@ angular.module('Techtalk', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home.html',
+        templateUrl: '/app/views/home.html',
         controller: 'HomeCtrl'
       })
       .when('/login', {
-        templateUrl: 'views/login.html',
+        templateUrl: '/app/views/login.html',
         controller: 'LoginCtrl'
       })
       .when('/chat', {
-        templateUrl: 'views/chat.html',
+        templateUrl: '/app/views/chat.html',
         controller: 'ChatCtrl'
       })
       .otherwise('/');

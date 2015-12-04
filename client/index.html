@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Techtalk</title>
     <link rel="stylesheet" href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-    <link rel="stylesheet" href="stylesheets/bootstrap.css">
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <link rel="stylesheet" href="content/css/styles.css">
+    <link rel="shortcut icon" href="content/images/favicon.ico">
   </head>
   <body>
   
@@ -23,7 +23,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li ng-if="isAuthenticated() && currentUser.name">
           <a href="#" class="niname-overflow">
-            <img class="media-object img-rounded" width="30" height="30" src="images/avatar.png">
+            <img class="media-object img-rounded" width="30" height="30" src="content/images/avatar.png">
             @{{currentUser.name}}
           </a>
         </li>
@@ -33,17 +33,17 @@
   
   <div ng-view></div>
   
-  <script src="vendor/socket.io.min.js"></script>
-  <script src="vendor/jquery.min.js"></script>
-  <script src="vendor/angular.min.js"></script>
-  <script src="vendor/angular-route.min.js"></script>
+  <script src="content/js/socket.io.min.js"></script>
+  <script src="content/js/jquery.min.js"></script>
+  <script src="content/js/angular.min.js"></script>
+  <script src="content/js/angular-route.min.js"></script>
   
-  <script src="app.js"></script>
-  <script src="services/api-service.js"></script>
-  <script src="directives/main-directive.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/services/api-service.js"></script>
+  <script src="app/directives/main-directive.js"></script>
   
-  <script src="controllers/home.js"></script>
-  <script src="controllers/navbar.js"></script>
-  <script src="controllers/chat.js"></script>
+  <script src="app/controllers/home.js"></script>
+  <script src="app/controllers/navbar.js"></script>
+  <script src="app/controllers/chat.js"></script>
 </body>
 </html>
