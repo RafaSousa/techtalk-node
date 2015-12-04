@@ -248,8 +248,9 @@ a:hover {
 
 @media screen and (max-width: 767px) {
   .container { 
-    padding-left: 3px; 
+    padding-left: 15px; 
   }
+  
   .navbar-nav > li .niname-overflow {
       table-layout: fixed;
       white-space: nowrap;
@@ -257,15 +258,33 @@ a:hover {
       overflow: hidden;
       width: 101px;
   }
+  
   .navbar-nav > li > a {
     padding: 0 8px;
   }
+  
   .navbar-brand {
     padding: 0 2px;
   }
+  .navbar 
+  {
+     margin-bottom: 5px;
+  }
+  
+  h2, .h2 { 
+    font-size: 19px;
+  }
+  
+  .message-wrap { 
+    margin-left: 15px
+  }
   
   .msg-wrap {
-    max-height: 390px;
-    min-height: 390px;
+    max-height: 350px;
+    min-height: 350px;
+  }
+  
+  .textarea-height {
+      height: 60px !important;
   }
 }

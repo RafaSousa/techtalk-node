@@ -15,4 +15,10 @@ angular.module('Techtalk', ['ngRoute'])
       })
       .otherwise('/');
   })
-;
+  .factory('config', function ($rootScope) {
+    return {
+      Urls: {
+        URLService: "//localhost:8080"
+      }
+    };
+  });

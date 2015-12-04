@@ -1,19 +1,13 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var config = require('./config');
-
-var app = express();
-
-var users = [];
-var messages = [];
+var express = require('express')
+    , config = require('./config')
+    , app = express();
 
 app.use(express.static(__dirname + '/'));
-app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     res.sendfile('./index.html');
 });
 
-app.listen(config.port);
-
-console.log('server web up =)');
+app.listen(config.port, function () {
+    console.log('Server Web is up =) - port:', config.port);
+});
