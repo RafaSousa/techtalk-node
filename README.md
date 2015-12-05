@@ -29,4 +29,4 @@ Build Techtalk demo project with AngularJS, Node.js and Socket.io
 ## LICENSE
 
 ## License
-[MIT](LICENSE.txt)
+[MIT](LICENSE)
