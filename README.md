@@ -2,6 +2,8 @@
 
 Build Techtalk demo project with AngularJS, Node.js and Socket.io
 
+![](https://techtalk-node.azurewebsites.net/techtalk.png)
+
 ## Modules
 
 * [express](http://expressjs.com/) - Web Framework
@@ -24,8 +26,7 @@ Build Techtalk demo project with AngularJS, Node.js and Socket.io
 * Start the server: 'node server.js'
 * Go http://localhost:8080/api/users
 
-## About
+## LICENSE
 
-[Rafael Sousa](http://www.rafaelsousa.com.br)
-
-![](https://techtalk-node.azurewebsites.net/techtalk.png)
+## License
+[MIT](LICENSE.txt)
