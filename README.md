@@ -27,6 +27,4 @@ Build Techtalk demo project with AngularJS, Node.js and Socket.io
 * Go http://localhost:8080/api/users
 
 ## LICENSE
-
-## License
 [MIT](LICENSE)
