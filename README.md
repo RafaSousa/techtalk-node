@@ -1,6 +1,6 @@
 # Techtalk Node Demo
 
-Build Techtalk demo project with AngularJS, Node.js and Socket.io
+Build Techtalk demo project with AngularJS, Node.js and Socket.io.
 
 ![](https://techtalk-node.azurewebsites.net/techtalk.png)
 
